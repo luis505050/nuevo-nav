@@ -1,0 +1,81 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px;
+    position: relative; /* Para que el dropdown se posicione relativo a la navbar */
+    z-index: 1; /* Asegura que el navbar esté por encima */
+}
+
+.logo {
+    color: white;
+    font-size: 24px;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    display: block;
+}
+
+.nav-links a:hover {
+    background-color: #575757;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px; /* Ajusta según tus preferencias */
+    z-index: 2; /* Asegura que el dropdown esté por encima del navbar */
+    border-radius: 5px; /* Bordes redondeados opcionales */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.hamburger {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 250px; /* Ancho del menú más pequeño */
+        position: absolute; /* Posiciona el menú de forma absoluta */
+        top: 50px; /* Ajusta según la altura del navbar */
+        right: 0; /* Alínea el menú a la derecha del navbar */
+        background-color: #5a5a5a; /* Fondo para el menú */
+        z-index: 2; /* Asegura que esté por encima */
+    }
+
+    .nav-links.active {
+        display: flex; /* Muestra el menú cuando está activo */
+    }
+
+    .hamburger {
+        display: block; /* Muestra el icono de hamburguesa */
+    }
+}
